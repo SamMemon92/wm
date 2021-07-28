@@ -1,3 +1,4 @@
+console.log('I am in workerjs')
 var CACHE_NAME = 'pwa-task-manager';
 var urlsToCache = [
   '/',
