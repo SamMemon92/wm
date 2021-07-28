@@ -2,7 +2,9 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
+        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <style data-href="/styles.d68cd5eb9c5f3bdd22c6.css" id="gatsby-global-css">
             @charset "UTF-8";
@@ -10081,6 +10083,22 @@
         <link as="fetch" rel="preload" href="/page-data/sq/d/63159454.json" crossorigin="anonymous" />
         <link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous" />
     </head>
+    <div id="root"></div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('worker.js').then(function(registration) {
+            console.log('Worker registration successful', registration.scope);
+          }, function(err) {
+            console.log('Worker registration failed', err);
+          }).catch(function(err) {
+            console.log(err);
+          });
+        });
+      } else {
+        console.log('Service Worker is not supported by browser.');
+      }
+    </script>
     <body>
         <div id="___gatsby">
             <div style="outline: none;" tabindex="-1" id="gatsby-focus-wrapper">
